@@ -39,11 +39,8 @@ def main():
     # Add arguments for the parser
     parser.add_argument('--model_name', type=str, required=True, help='The model name from Hugging Face.')
     parser.add_argument('--data_path', type=str, required=True, help='Path to the parallel data directory.')
-    parser.add_argument('--gpus', type=str, default='0', help='GPUs to use, e.g. "0".')
     parser.add_argument('--num_sents', type=int, default=100, help='Maximum number of sentences to process.')
     parser.add_argument('--save_path', type=str, required=True, help='Path to save the embeddings.')
-    parser.add_argument('--token', type=str, default=None, help='Hugging Face token (optional).')
-    parser.add_argument('--cache_dir', type=str, default='./cache', help='Directory for caching the model (optional).')
     parser.add_argument('--file_ext', type=str, default='.txt', help='File extension for input files (optional, default: .txt).')
 
     # Parse the arguments
