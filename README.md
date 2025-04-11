@@ -102,7 +102,7 @@ For example, if we want to translate the `arb_Arab` passages in the Belebele ben
 
 ``` python src/LLM_generation.py --llm_name 'meta-llama/Llama-3.1-8B' --source_lang 'arb_Arab' --translation_task 'xxtoen' --save_dir <SAVE_DIR> --strata 'test' --num_fewshot 5 --dataset 'belebele' --combination_approach 'separate_inputs' --input_field 'flores_passage' --translation_mode 'translation' ```
 
-Once the translations are generated, and we want to evaluate the quality of translations, we run the same command but with the `translation_mode` argument set to `evaluation` instead.
+Once the translations are generated, and we want to evaluate the quality of translations, we run the same command but with the `translation_mode` argument set to `evaluation` instead. All the translations for Llama3.1 model are already run and stored in `translation_outpus/` directory. 
 
 
 
