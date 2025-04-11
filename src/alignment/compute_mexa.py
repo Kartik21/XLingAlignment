@@ -62,7 +62,7 @@ if __name__ == "__main__":
     parser.add_argument('--embedding_path', type=str, required=True, help='Path to the directory containing embedding files.')
     parser.add_argument('--save_path', type=str, required=True, help='Path to save the results.')
     parser.add_argument('--num_sents', type=int, default=900, help='Maximum number of sentences to process (default: 100)')
-    parser.add_argument('--embedding_type', type=str, choices=['embd_weighted', 'embd_lasttoken'], default='embd_lasttoken', help='Type of embedding to use (default: embd_weighted)')
+    parser.add_argument('--embedding_type', type=str, default='embd_lasttoken', help='Type of embedding to use (default: embd_lasttoken)')
     parser.add_argument('--dataset', type=str, required=False, help='Dataset : xstorycloze, xcopa, or belebele')
     parser.add_argument('--lang', type=str, required=False, help='Language, only used for xcopa')
     args = parser.parse_args()
