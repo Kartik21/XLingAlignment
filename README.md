@@ -82,7 +82,7 @@ MEXA, on the other hand is computed using the `compute_mexa.py` command. For exa
 
 ```python src/alignment/compute_mexa.py --num_sents 900  --lang 'arb_Arab' --embedding_path <EMBEDDING_PATH> --save_path <SAVE_PATH> --dataset 'belebele'```
 
-Both DALI and MEXA scores are stored as a .json file for each layer of the transformer per sample. 
+Both DALI and MEXA scores are stored as a .json file for each transformer layer per sample. 
 
 ## Compute Task Accuracy
 
@@ -93,6 +93,18 @@ Task accuracy is computed using the `lm-harness` tool for the discriminative tas
 The accuracy results for the benchmark are stored in the `accuracy_outputs/` folder for each model. 
 
 ## Generate and Compute Translation Quality
+
+To generate the translations using LLM and assess the quality of translations, use the following command:
+
+``` python src/LLM_generation.py --llm_name <LLM_NAME> --source_lang <SOURCE_LANG> --target_lang <TARGET_LANG> --translation_task <TRANSLATION_TASK> --save_dir <SAVE_DIR> --strata <STRATA> --num_fewshot <NUM_FEWSHOT> --dataset <DATASET> --combination_approach <COMBINATION_APPROACH> --input_field <INPUT_FIELD> --translation_mode <TRANSLATION_MODE> ```
+
+For example, if we want to translate the `arb_Arab` passages in the Belebele benchmark to `eng_Latn` using Llama3.1, we use:
+
+``` python src/LLM_generation.py --llm_name 'meta-llama/Llama-3.1-8B' --source_lang 'arb_Arab' --translation_task 'xxtoen' --save_dir <SAVE_DIR> --strata 'test' --num_fewshot 5 --dataset 'belebele' --combination_approach 'separate_inputs' --input_field 'flores_passage' --translation_mode 'translation' ```
+
+Once the translations are generated, and we want to evaluate the quality of translations, we run the same command but with the `translation_mode` argument set to `evaluation` instead.
+
+
 
 
 
